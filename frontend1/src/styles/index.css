@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@config "../../tailwind.config.cjs";
+
+/* ── Base ── */
+body {
+  background-color: #0d0d18;
+  color: #e9e6f7;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+/* Light theme overrides (class on <html>) */
+.theme-light {
+  color-scheme: light;
+}
+
+.theme-light body {
+  background-color: #fcf8ff;
+  color: #131320;
+}
+
+.theme-light .bg-surface-container-lowest { background-color: #ffffff !important; }
+.theme-light .bg-surface-container-low { background-color: #f5f3ff !important; }
+.theme-light .bg-surface-container { background-color: #f0eefc !important; }
+.theme-light .bg-surface-container-high { background-color: #e9e7f7 !important; }
+.theme-light .bg-surface-container-highest { background-color: #e1def2 !important; }
+.theme-light .bg-surface { background-color: #fcf8ff !important; }
+.theme-light .bg-background { background-color: #fcf8ff !important; }
+
+.theme-light .text-on-surface { color: #131320 !important; }
+.theme-light .text-on-surface-variant { color: #4b4a5d !important; }
+.theme-light .text-outline { color: #6b7280 !important; }
+
+::selection {
+  background: rgba(251, 130, 253, 0.3);
+}
+
+/* ── Material Symbols ── */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ── Mechanical Eye ── */
+.eye-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.outer-ring {
+  border: 2px solid rgba(148, 34, 156, 0.15);
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 60px rgba(148, 34, 156, 0.05);
+}
+
+.inner-ring {
+  border: 4px dashed rgba(235, 117, 238, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  inset: 40px;
+  animation: spin 20s linear infinite;
+}
+
+.pupil-core {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #fb82fd 0%, #94229c 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px #94229c;
+  transition: all 0.2s ease-out;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Glass Panel ── */
+.glass-panel {
+  background: rgba(24, 24, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Pulse Glow ── */
+.pulse-glow {
+  box-shadow: 0 0 20px rgba(251, 130, 253, 0.15);
+}
+
+/* ── No Scrollbar ── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
