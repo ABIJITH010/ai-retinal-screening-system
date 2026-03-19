@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: ai-retinal-screening-system/deployment/Dockerfile
+    container_name: retinal-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../ai-retinal-screening-system:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
